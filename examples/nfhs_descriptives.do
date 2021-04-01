@@ -1,6 +1,9 @@
+cap log close
+log using nfhs_descriptives.log,replace
+pause on
+
 *this do-file plots the relationship between age and asset 
 *ownership in India, using the National Family Health Survey.
-pause on
 
 use "https://github.com/tvogl/econ121/raw/main/data/nfhs4.dta",clear
 
@@ -35,6 +38,8 @@ scatter sd_assets age  ///
 pause
 
 *we will talk more about sampling weights in the next couple weeks.
+
+log close
 
 
 
