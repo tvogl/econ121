@@ -20,6 +20,22 @@ label list race_lbl
 label list sex_lbl
 pause
 
+*summarize income with percentiles (add ,d)
+sum incwage,d
+pause
+
+*lots of zeros restrict to workers who work 40+ hrs per week
+tab uhrsworkt
+*be sure to account for top codes
+drop if uhrsworkt<40|uhrsworkt>170
+pause
+
+*still a bunch of zeroes in the data.
+*we'll move forward taking logs, but note 
+*that we are dropping 5+% of the lowest values.
+sum incwage,d
+pause
+
 *generate white, black, male, female, log income (not hourly)
 gen white = (race==100)
 gen black = (race==200)
