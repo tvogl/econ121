@@ -1,5 +1,5 @@
 cap log close
-log using cps_nonparametric.log,replace
+*log using cps_nonparametric.log,replace
 pause on
 
 *this do-file studies the relationship or gender, race, and age 
@@ -69,4 +69,6 @@ twoway (lpoly lninc age if black==1&female==1,degree(1) bw(2) lcolor(orange_red)
        (lpoly lninc age if white==1&male==1,degree(1) bw(2) lcolor(dknavy) lpattern(dash)) ///
 	   ,legend(label(1 "Black women") label(2 "White women") ///
 	           label(3 "Black men") label(4 "White men"))   
+			   
+*log close			    
 			   
