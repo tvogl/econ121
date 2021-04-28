@@ -1,11 +1,11 @@
 clear all
 pause on
 cap log close
-log using bacon_example.log,replace
+*log using bacon_example.log,replace
 
 *analysis of bacon consumption in the national health interview survey.
 *open nhis dta, describe and summarize.
-use nhis2000
+use "https://github.com/tvogl/econ121/raw/main/data/nhis2000.dta"nhis2000,clear
 
 d
 sum
@@ -128,4 +128,4 @@ pause
 *these are especially convenient for binary independent variables.
 *for instance, men have 48% higher odds of eating bacon than women.
 
-log close
+*log close
