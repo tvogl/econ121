@@ -5,7 +5,7 @@ cap log close
 
 *analysis of bacon consumption in the national health interview survey.
 *open nhis dta, describe and summarize.
-use "https://github.com/tvogl/econ121/raw/main/data/nhis2000.dta"nhis2000,clear
+use "https://github.com/tvogl/econ121/raw/main/data/nhis2000.dta",clear
 
 d
 sum
