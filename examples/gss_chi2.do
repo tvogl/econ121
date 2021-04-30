@@ -44,6 +44,5 @@ ttest racpres,by(republican)
 reg racpres republican
 
 
-
-
+cap erase temp.dta
 cap log close
