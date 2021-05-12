@@ -1,6 +1,6 @@
 *This do file analyzes a panel of states over time
 *to measure the effect of seat belt laws on motor vehicle
-*fatality rates and seat belt usage
+*fatality rates and seat belt usage between 1983 and 1997.
 
 pause on
 
