@@ -74,8 +74,6 @@ nlsy79_workers %>% group_by(black) %>% summarize(mean=mean(laborinc07, na.rm = T
                                                  n=sum(!is.na(laborinc07)))
 # still an $15k difference, which amounts to a black/non-black ratio of:
 55119/40731
-# note that the observation counts and means are slightly different from 
-# what we get in Stata. I am not sure why!
 
 # now let's look at log earnings. first remove zeros, then take logs.
 nlsy79_workers <- subset(nlsy79_workers, laborinc07>0)

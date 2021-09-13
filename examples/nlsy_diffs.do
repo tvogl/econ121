@@ -59,18 +59,19 @@ reg laborinc07 black,r
 *equivalent to a part-time job of 20 hours per week for
 *50 weeks.
 sum hours07,d
-keep if hours07>=1000
+keep if hours07>=1000 & hours07<.
+*the second part (hours07<.) requires that hours07 is not missing.
 *means of by race
 tab black,sum(laborinc07)
 *still an $15k difference, which amounts to a black/non-black
 *ratio of:
-di 55186/40626
+di 55119/40731
 
 *now let's look at log earnings.
 gen loginc07 = ln(laborinc07)
 tab black,sum(loginc07)
 *difference:
-di 10.635-10.340
+di 10.639-10.344
 
 *this difference in logs can by roughly interpreted as 
 *a 30% difference in earnings, although this interpretation
@@ -78,13 +79,13 @@ di 10.635-10.340
 *continuous X variables rather than binary ones. if we 
 *were being really careful, we would exponentiate the 
 *difference of logs:
-di exp(10.635-10.340)
+di exp(10.639-10.344)
 *which implies a 34% difference in geometric means. this
 *proportional difference is very close to the 36% difference
 *in arithmetic means that we saw above.
 
 *the t-statistic:
-di (10.635-10.340)/sqrt(.832^2/3865 + .927^2/1572)
+di (10.639-10.344)/sqrt(.823^2/3829 + .925^2/1566)
 *well above 1.96, so statistically significant by the usual standards.
 
 *alternative ways to run this test are...
