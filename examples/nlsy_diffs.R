@@ -1,8 +1,4 @@
-# uncomment if libraries are not installed.
-# install.packages("ggplot2")
-# install.packages("tidyverse")
-# install.packages("dplyr")
-# install.packages("estimatr")
+install.packages(c('tidyverse','estimatr'))
 
 ###########################################
 #ESTIMATING RACIAL DIFFERENCES IN EARNINGS#
@@ -14,6 +10,7 @@ library(haven)
 nlsy79 <- read_dta("https://github.com/tvogl/econ121/raw/main/data/nlsy79.dta")
 
 # data structure
+library(tidyverse)
 glimpse(nlsy79)
 
 # mean and sd of labor earnings (na.rm=TRUE removes missing values from the calculation)
@@ -26,16 +23,9 @@ sd(nlsy79$laborinc07,na.rm=TRUE)
 # thinking about sample selection.
 summary(nlsy79$laborinc07)
 
-# we can see this better when we plot histograms by race (need  ggplot2 library for graphing)
+# we can see this better when we plot histograms by race (need ggplot2 library for graphing)
 library(ggplot2)
 ggplot(nlsy79, aes(x = laborinc07)) +
-  geom_histogram(fill = "white", colour = "black") +
-  facet_grid(black ~ .)
-# let's add value labels for race (need dplyr library for data manipulation)
-library(dplyr)
-nlsy79_labels <- nlsy79
-nlsy79_labels$black <- recode_factor(nlsy79_mod$black, '0' = 'Non-black', '1' = 'Black')
-ggplot(nlsy79_labels, aes(x = laborinc07)) +
   geom_histogram(fill = "white", colour = "black") +
   facet_grid(black ~ .)
 

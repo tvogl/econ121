@@ -1,5 +1,4 @@
-# uncomment if libraries are not installed.
-# install.packages("tidyverse")
+install.packages(c('tidyverse','haven'))
 
 # analyzes naming trends in the social security names database (national).
 # takes special interest in frequency of muslim names before and after 9/11/2001.
@@ -35,13 +34,6 @@ data$lnfreq = log(data$freq)
 ggplot(data, aes(x=year, y=lnfreq, group=name, color=name)) +
   geom_line() +
   geom_vline(xintercept=2001)
-
-
-+
-  scale_color_viridis(discrete = TRUE) +
-  theme(legend.position="none") +
-  ggtitle("Popularity of American names in the previous 30 years") +
-  theme_ipsum()
   
 
 
