@@ -1,4 +1,12 @@
-install.packages(c('tidyverse','haven'))
+# uncomment if these packages are not installed
+# install.packages(c('tidyverse','haven'))
+
+# save output
+rmarkdown::render(
+  input = "nlsy_diffs.R",
+  output_format = "pdf_document",
+  output_file = "ssa_names_trends_log"
+)
 
 # analyzes naming trends in the social security names database (national).
 # takes special interest in frequency of muslim names before and after 9/11/2001.

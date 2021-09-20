@@ -1,4 +1,5 @@
-install.packages(c('tidyverse','estimatr'))
+# uncomment if these packages are not installed
+# install.packages(c('tidyverse','estimatr'))
 
 ###########################################
 #ESTIMATING RACIAL DIFFERENCES IN EARNINGS#
